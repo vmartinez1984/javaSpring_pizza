@@ -23,7 +23,23 @@ dependencies {
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation 'org.springframework.boot:spring-boot-starter-thymeleaf-test'
 	testImplementation 'org.springframework.boot:spring-boot-starter-webmvc-test'
-	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'	
+
+	//Pa que te pruebes testa
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0'
+
+	//Cuando mandas a chechar su mail
+	implementation 'org.springframework.boot:spring-boot-starter-mail'
+
+	//Pa los getters and setters
+	compileOnly("org.projectlombok:lombok:1.18.48")
+	annotationProcessor("org.projectlombok:lombok:1.18.48")
+
+	// Soporte para JPA y Hibernate
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    
+    // Conector JDBC para MySQL
+    runtimeOnly 'com.mysql:mysql-connector-j'
 }
 
 tasks.named('test') {

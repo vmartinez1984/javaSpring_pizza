@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzas</title>
+</head>
+<body>
+    <h1>Pizzas Coliseo</h1>
+
+    <a href="/pizzas/crear">Agregar nueva pizza</a>
+
+    <table>
+        <tbody>
+            <tr th:each="pizza : ${pizzas}">
+                <td th:text="${pizza.nombre}"></td>
+                <td th:text="${pizza.descripcion}"></td>
+                <td>
+                    <a href="editar/${pizza.id}">editar</a>
+                    <a href="borrar/${pizza.id}">borrar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

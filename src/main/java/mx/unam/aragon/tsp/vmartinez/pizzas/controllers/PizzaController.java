@@ -1,16 +1,30 @@
 package mx.unam.aragon.tsp.vmartinez.pizzas.controllers;
 
-import mx.unam.aragon.tsp.vmartinez.pizzas.dtos.IdDto;
+import java.util.List;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import mx.unam.aragon.tsp.vmartinez.pizzas.businessLayer.PizzasBusinessLayer;
+import mx.unam.aragon.tsp.vmartinez.pizzas.dtos.PizzaDto;
+
 
 @RestController
 public class PizzaController {
     
-    @GetMapping("/api/v1/pizzas")    
-    public IdDto Saludar(){
-        IdDto idDto = new IdDto(1, "Hola mundo");
+    private  PizzasBusinessLayer pizzasBusinessLayer;
 
-        return  idDto;
+    public PizzaController(PizzasBusinessLayer businessLayer) {
+        this.pizzasBusinessLayer = businessLayer;
     }
+
+    @GetMapping("/api/v1/pizzas")        
+    public List<PizzaDto> obtenerTodas(){
+        List<PizzaDto> pizzas;
+
+        pizzas = pizzasBusinessLayer.obtenerTodas();
+
+        return pizzas;
+    }
+    
 }
