@@ -25,6 +25,10 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-webmvc-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'	
 
+	//Para hibernet
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'//1
+	implementation 'org.postgresql:postgresql'//2
+	
 	//Pa que te pruebes testa
 	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0'
 
