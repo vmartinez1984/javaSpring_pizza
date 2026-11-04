@@ -16,7 +16,7 @@ import lombok.Setter;
 @AllArgsConstructor 
 @NoArgsConstructor 
 @Entity 
-@Table(name = "pizzas")
+@Table(name = "pizza")
 public class PizzaEntity {
     
     @Id 
@@ -34,4 +34,7 @@ public class PizzaEntity {
 
     @Column(nullable = false)
     private boolean activo;
+
+    @Column(nullable = false)
+    private String guid; //Aqui esta el identificador unico, idempotencia
 }
