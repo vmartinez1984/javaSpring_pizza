@@ -10,6 +10,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import mx.unam.aragon.tsp.vmartinez.pizzas.dtos.PizzaDto;
 
 @Setter 
 @Getter 
@@ -37,4 +38,8 @@ public class PizzaEntity {
 
     @Column(nullable = false)
     private String guid; //Aqui esta el identificador unico, idempotencia
+
+    public PizzaDto toDto() {
+        return new PizzaDto(id, nombre, descripcion, precio);        
+    }
 }

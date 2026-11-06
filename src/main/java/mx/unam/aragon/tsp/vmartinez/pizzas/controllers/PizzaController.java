@@ -29,20 +29,22 @@ public class PizzaController {
         List<PizzaDto> pizzas;
 
         pizzas = pizzasBusinessLayer.obtenerTodas();
-
+        
+        //200
         return pizzas;
     }
 
     @PostMapping("/api/v1/pizzas")
-    public IdDto guardarDto(PizzaDtoIn pizzaDtoIn) {
+    public IdDto guardarDto(@RequestBody PizzaDtoIn pizzaDtoIn) {
         PizzaDto dto 
         = pizzasBusinessLayer.obtenerPorGuid(pizzaDtoIn.getGuid());
         if(dto == null){            
             IdDto idDto = pizzasBusinessLayer.Agregar(pizzaDtoIn);
-            
+            // 201
             return idDto;
         }
 
+        //208
         return new IdDto(dto.getId(), "Pizza registrada previamente");
     }
     
